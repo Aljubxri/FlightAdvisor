@@ -1,4 +1,5 @@
 from weather import weather
+from flightFinder import flightFinder
 
 
 
@@ -7,7 +8,8 @@ from weather import weather
 
 if __name__ == '__main__':
     event = weather()
-    event.askinput()
+    finder = flightFinder()
+    finder.flightinfo("JT784")
 
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/

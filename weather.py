@@ -1,4 +1,5 @@
 import requests
+import bs4
 
 
 class weather:
@@ -15,6 +16,7 @@ class weather:
         location = location.strip()
         unit_type = unit_type.strip()
         return self.temp(unit_type, location)
+
 
     def temp(self,unit,city):
 

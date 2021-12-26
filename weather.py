@@ -16,13 +16,13 @@ class weather:
         unit_type = input("What unit you would like your report in? (Enter 'C' or 'F')")
 
         if what_do_you_want == "city":
-            location = input("Please enter your city of interest (USA)")
+            location = input("Please enter your city of interest (USA):")
             location = location.strip()
             unit_type = unit_type.strip()
             self.temp(unit_type, location)
 
         elif what_do_you_want == "flight":
-            flightnumber = input("Please enter the flight number")
+            flightnumber = input("Please enter the flight number:")
             flight1 = flightFinder.flightFinder(flightnumber)
             location = str(flight1.destination_city()[1][1])
 

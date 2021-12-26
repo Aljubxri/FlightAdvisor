@@ -1,5 +1,5 @@
 from weather import weather
-from flightFinder import flightFinder
+
 
 
 
@@ -7,8 +7,9 @@ from flightFinder import flightFinder
 
 
 if __name__ == '__main__':
-    event = weather()
-    event.askinput()
+    trial = weather()
+    trial.askinput()
+
 
 
 

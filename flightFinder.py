@@ -4,7 +4,7 @@ import requests
 class flightFinder:
     url = "https://www.google.com/search?q="
 
-    def __init__(self,flight):
+    def __init__(self, flight):
         self.flight = flight
         pass
 

@@ -1,5 +1,6 @@
 import requests
 import bs4
+import flightFinder
 
 
 class weather:
@@ -11,27 +12,41 @@ class weather:
 
 
     def askinput(self):
-        location = input("Please enter your location of interest (City)")
-        unit_type = input("What unit you would like your report in? Please enter C or F")
-        location = location.strip()
-        unit_type = unit_type.strip()
-        return self.temp(unit_type, location)
+        what_do_you_want = input("Would you like to see the weather by flight number or city?(Enter 'city' or 'flight')")
+        unit_type = input("What unit you would like your report in? (Enter 'C' or 'F')")
+
+        if what_do_you_want == "city":
+            location = input("Please enter your city of interest (USA)")
+            location = location.strip()
+            unit_type = unit_type.strip()
+            self.temp(unit_type, location)
+
+        elif what_do_you_want == "flight":
+            flightnumber = input("Please enter the flight number")
+            flight1 = flightFinder.flightFinder(flightnumber)
+            location = str(flight1.destination_city()[1][1])
+
+            infotype = input("Would you also like to see current flight details? (Y/N)")
+            if infotype == "Y" or infotype == 'Y':
+                if flight1.destination_city()[0]:
+                    flight1.flightinfo()
+                    self.temp(unit_type,location)
 
 
     def temp(self,unit,city):
 
         # For text parsing the unit
         if unit == 'C' or unit == 'c':
-            unit = "metric"
+            unit_u = "metric"
         elif unit == 'F' or unit == 'f':
-            unit = "imperial"
+            unit_u = "imperial"
         else:
             print("Error input C or F")
             pass
         c_or_f = unit.capitalize() + "°"
 
         # API call
-        complete_url = self.base_url + "&q=" + city + "&units=" + unit + "&appid=" + self.api_key
+        complete_url = self.base_url + "&q=" + city + "&units=" + unit_u + "&appid=" + self.api_key
         response = requests.get(complete_url)
         jason = response.json()
         jason_main = jason["main"]  # main branch

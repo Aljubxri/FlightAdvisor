@@ -4,7 +4,7 @@ import flightFinder
 
 
 class weather:
-    api_key = "-API KEY GOES HERE-"
+    api_key = "--API KEY GOES HERE--"
     base_url = "http://api.openweathermap.org/data/2.5/weather?"
 
     # Uses Openweathermap API for current data, the api_key has been redacted for privacy purposes

@@ -1,17 +1,11 @@
 from weather import weather
 
 
-
-
-
-
-
 if __name__ == '__main__':
-    trial = weather()
-    trial.askinput()
+    trial = weather()   # creates weather object
+    trial.askinput()    # if requested, it will also create the flightFinder oject to look up a flight
 
 
 
 
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/

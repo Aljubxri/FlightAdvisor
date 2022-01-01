@@ -1,16 +1,16 @@
 # FlightAdvisor 
 By - Mohammed Aljubori
 
-I made this project because I wanted to make a useful project that also implemented API's and webscraping. <br> It was really fun working on this and I will be adding more usescases. (check out the ideas.txt file!)
+I made this project because I wanted to make a useful project that also implemented API's and web scraping. <br> It was really fun working on this, and I will be adding more use cases. (Check out the ideas.txt file!)
 
-## Requirments
+## Requirements
 Must have:
 * API key from openweathermap (free to sign up)<br>
 * installed beautifulsoup4 (bs4)
 * installed requests. <br>
 
 ## How to run
-** At the moment the input will 100% work for any flights or cities in the US, however international funcionality is being worked on. **<br>
+** At the moment the input will 100% work for any flights or cities in the US, however international functionality is being worked on. **<br>
 The objects are already initiated in main.py, however it will require a valid US flight number as well (if that option is chosen)
 
 <br>
